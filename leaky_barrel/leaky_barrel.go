@@ -11,6 +11,8 @@ var (
 	once sync.Once
 )
 
+var _ ratelimit_kit.RateLimiter = &leakyBarrel{}
+
 type leakyBarrel struct {
 	snippet       time.Duration
 	allowRequests int32

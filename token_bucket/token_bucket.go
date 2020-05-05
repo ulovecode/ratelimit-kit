@@ -10,6 +10,7 @@ import (
 var (
 	once sync.Once
 )
+var _ ratelimit_kit.RateLimiter = &tokenBucket{}
 
 type tokenBucket struct {
 	snippet       time.Duration
